@@ -12,6 +12,10 @@ namespace Leeum2015_EAP_11
         public static int LANG_ENG = 0x02;
 
 
+        public static int DETAIL_TOP = 0x03;
+        public static int DETAIL_MIDDLE = 0x04;
+        public static int DETAIL_BOTTOM = 0x05;
+
 
 
     }

@@ -24,6 +24,8 @@ namespace Leeum2015_EAP_11
 
         private string pathStr = "pack://application:,,,/Resources/";
 
+        public int lang = GlobalValues.LANG_KOR;
+
         public SceneHome(int Language)
         {
             InitializeComponent();
@@ -81,7 +83,17 @@ namespace Leeum2015_EAP_11
 
         public void openDetail(object sender, RoutedEventArgs e)
         {
+            ImageButton btn = (ImageButton)sender;
+            int detail = (int)btn.Tag;
 
+
+            // 
+
+            //SceneDetail scDetail = new SceneDetail(detail, lang);
+
+            
+               
+            
 
 
         }

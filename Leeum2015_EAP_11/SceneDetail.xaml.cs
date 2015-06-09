@@ -20,7 +20,7 @@ namespace Leeum2015_EAP_11
     /// </summary>
     public partial class SceneDetail : UserControl
     {
-        public SceneDetail()
+        public SceneDetail(int DetailNumber, int language)
         {
             InitializeComponent();
         }
