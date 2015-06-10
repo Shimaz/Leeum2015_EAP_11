@@ -89,9 +89,13 @@ namespace Leeum2015_EAP_11
 
             // 
 
-            //SceneDetail scDetail = new SceneDetail(detail, lang);
+            SceneDetail scDetail = new SceneDetail(detail, lang);
 
-            
+
+
+            _cvBaseHome.Children.Add(scDetail);
+
+
                
             
 
