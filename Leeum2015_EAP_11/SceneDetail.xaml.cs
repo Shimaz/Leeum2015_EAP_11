@@ -35,11 +35,13 @@ namespace Leeum2015_EAP_11
 
 
             InitContent();
+            
         }
 
 
         private void InitContent()
         {
+            // 공통 UI 
 
             TextBlock text = new TextBlock();
             text.FontSize = 20;
@@ -58,8 +60,8 @@ namespace Leeum2015_EAP_11
             btn.Height = 200;
             btn.Content = "Close";
 
-            Canvas.SetLeft(btn, 700);
-            Canvas.SetTop(btn, 700);
+            Canvas.SetLeft(btn, _cvBackground.Width - btn.Width - 100);
+            Canvas.SetTop(btn, _cvBackground.Height - btn.Height - 100);
 
 
             btn.Click += new RoutedEventHandler(CloseScene);
@@ -67,6 +69,24 @@ namespace Leeum2015_EAP_11
 
             _cvBackground.Children.Add(btn);
             
+        }
+
+
+        private void InitContentTop()
+        {
+            // 상단부 컨텐츠
+        }
+
+        private void InitContentMiddle()
+        {
+            // 중단부 컨텐츠
+        }
+
+        private void InitContentBottom()
+        {
+            // 하단부 컨텐츠 
+
+
         }
 
         private void CloseScene(object sender, RoutedEventArgs e)
