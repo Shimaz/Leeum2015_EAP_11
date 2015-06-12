@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +55,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GlobalValues.cs" />
+    <Compile Include="ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SceneDetail.xaml.cs">
       <DependentUpon>SceneDetail.xaml</DependentUpon>
     </Compile>
@@ -65,6 +69,10 @@
     <Page Include="ImageButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +128,41 @@
   <ItemGroup>
     <Resource Include="Resources\btn_tmp_normal.png" />
     <Resource Include="Resources\btn_tmp_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\text_tmp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btn_01_normal.png" />
+    <Resource Include="Resources\btn_01_pressed.png" />
+    <Resource Include="Resources\btn_02_normal.png" />
+    <Resource Include="Resources\btn_02_pressed.png" />
+    <Resource Include="Resources\btn_03_normal.png" />
+    <Resource Include="Resources\btn_03_pressed.png" />
+    <Resource Include="Resources\btn_04_normal.png" />
+    <Resource Include="Resources\btn_04_pressed.png" />
+    <Resource Include="Resources\btn_05_normal.png" />
+    <Resource Include="Resources\btn_05_pressed.png" />
+    <Resource Include="Resources\btn_06_normal.png" />
+    <Resource Include="Resources\btn_06_pressed.png" />
+    <Resource Include="Resources\btn_07_normal.png" />
+    <Resource Include="Resources\btn_07_pressed.png" />
+    <Resource Include="Resources\btn_08_normal.png" />
+    <Resource Include="Resources\btn_08_pressed.png" />
+    <Resource Include="Resources\btn_09_normal.png" />
+    <Resource Include="Resources\btn_09_pressed.png" />
+    <Resource Include="Resources\btn_10_normal.png" />
+    <Resource Include="Resources\btn_10_pressed.png" />
+    <Resource Include="Resources\btn_11_normal.png" />
+    <Resource Include="Resources\btn_11_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_01.png" />
+    <Resource Include="Resources\img_02.png" />
+    <Resource Include="Resources\img_03.png" />
+    <Resource Include="Resources\img_04.png" />
+    <Resource Include="Resources\img_05.png" />
+    <Resource Include="Resources\img_06.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

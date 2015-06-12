@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,10 @@ namespace Leeum2015_EAP_11
 
         private int lang;
         private int detail;
+        
 
+
+        
         public SceneDetail(int DetailNumber, int language)
         {
             InitializeComponent();
@@ -34,7 +38,23 @@ namespace Leeum2015_EAP_11
             this.detail = DetailNumber;
 
 
+
             InitContent();
+
+            if (detail == GlobalValues.DETAIL_TOP)
+            {
+                InitContentTop();
+            }
+            else if (detail == GlobalValues.DETAIL_MIDDLE)
+            {
+                InitContentMiddle();
+            }
+            else
+            {
+                InitContentBottom();
+            }
+            
+
             
         }
 
@@ -75,17 +95,92 @@ namespace Leeum2015_EAP_11
         private void InitContentTop()
         {
             // 상단부 컨텐츠
+            BitmapImage img = new BitmapImage(new Uri(GlobalValues.pathStr + "text_tmp.png"));
+            _imgText.Source = img;
+            _imgText.Width = img.Width;
+            _imgText.Height = img.Height;
+
+
+
+            for (int i = 0; i < GlobalValues.CONTENT_COUNT_TOP; i++)
+            {
+                ImageButton btn = new ImageButton();
+                string str = string.Format("{0:00}", i + 1);
+                BitmapImage imgg = new BitmapImage(new Uri(GlobalValues.pathStr + "btn_" + str + "_normal.png"));
+                btn.NormalImage = imgg;
+                btn.PushedImage = new BitmapImage(new Uri(GlobalValues.pathStr + "btn_" + str + "_pressed.png"));
+                btn.Tag = 100 + i;
+
+                btn.Click += new RoutedEventHandler(ThumbnailClicked);
+
+                Canvas.SetLeft(btn, GlobalValues.THUMB_START_MARGIN_X + (i * (imgg.Width + GlobalValues.THUMB_MARGIN)));
+                Canvas.SetTop(btn, GlobalValues.THUMB_START_MARGIN_Y);
+
+                _cvBackground.Children.Add(btn);
+
+
+            }
+
         }
 
         private void InitContentMiddle()
         {
             // 중단부 컨텐츠
+            BitmapImage img = new BitmapImage(new Uri(GlobalValues.pathStr + "text_tmp.png"));
+            _imgText.Source = img;
+            _imgText.Width = img.Width;
+            _imgText.Height = img.Height;
+
+
+
+            for (int i = 0; i < GlobalValues.CONTENT_COUNT_MIDDLE; i++)
+            {
+                ImageButton btn = new ImageButton();
+                string str = string.Format("{0:00}", i + 1);
+                BitmapImage imgg = new BitmapImage(new Uri(GlobalValues.pathStr + "btn_" + str + "_normal.png"));
+                btn.NormalImage = imgg;
+                btn.PushedImage = new BitmapImage(new Uri(GlobalValues.pathStr + "btn_" + str + "_pressed.png"));
+                btn.Tag = 100 + i;
+
+                btn.Click += new RoutedEventHandler(ThumbnailClicked);
+
+                Canvas.SetLeft(btn, GlobalValues.THUMB_START_MARGIN_X + (i * (imgg.Width + GlobalValues.THUMB_MARGIN)));
+                Canvas.SetTop(btn, GlobalValues.THUMB_START_MARGIN_Y);
+
+                _cvBackground.Children.Add(btn);
+
+
+            }
         }
 
         private void InitContentBottom()
         {
             // 하단부 컨텐츠 
+            BitmapImage img = new BitmapImage(new Uri(GlobalValues.pathStr + "text_tmp.png"));
+            _imgText.Source = img;
+            _imgText.Width = img.Width;
+            _imgText.Height = img.Height;
 
+
+
+            for (int i = 0; i < GlobalValues.CONTENT_COUNT_BOTTOM; i++)
+            {
+                ImageButton btn = new ImageButton();
+                string str = string.Format("{0:00}", i + 1);
+                BitmapImage imgg = new BitmapImage(new Uri(GlobalValues.pathStr + "btn_" + str + "_normal.png"));
+                btn.NormalImage = imgg;
+                btn.PushedImage = new BitmapImage(new Uri(GlobalValues.pathStr + "btn_" + str + "_pressed.png"));
+                btn.Tag = 100 + i;
+
+                btn.Click += new RoutedEventHandler(ThumbnailClicked);
+
+                Canvas.SetLeft(btn, GlobalValues.THUMB_START_MARGIN_X + (i * (imgg.Width + GlobalValues.THUMB_MARGIN)));
+                Canvas.SetTop(btn, GlobalValues.THUMB_START_MARGIN_Y);
+
+                _cvBackground.Children.Add(btn);
+
+
+            }
 
         }
 
@@ -96,6 +191,31 @@ namespace Leeum2015_EAP_11
             ((Canvas)this.Parent).Children.Remove(this);
 
 
+        }
+
+
+
+        private void ThumbnailClicked(object sender, RoutedEventArgs e)
+        {
+
+            //if (_cvImageViewer.Children.Count != 0)
+            //{
+            //    ImageViewer tmp = (ImageViewer)_cvImageViewer.Children[_cvImageViewer.Children.Count - 1];
+            //    tmp.CloseImage();
+            //}
+
+
+            foreach (UIElement child in _cvImageViewer.Children)
+            {
+                ImageViewer tmp = (ImageViewer)child;
+                if (!tmp.IsClosing) tmp.CloseImage();
+
+            }
+
+            int imgNo = (int)((ImageButton)sender).Tag;
+            ImageViewer iv = new ImageViewer(imgNo);
+            _cvImageViewer.Children.Add(iv);
+            iv.ShowImage();
         }
     }
 

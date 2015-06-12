@@ -45,10 +45,10 @@ namespace Leeum2015_EAP_11
 
 
             btn01.Click += new RoutedEventHandler(openDetail);
-            btn01.Tag = 101;
+            btn01.Tag = GlobalValues.DETAIL_TOP;
 
             Canvas.SetTop(btn01, 100);
-            Canvas.SetLeft(btn01, 700);
+            Canvas.SetLeft(btn01, 100);
             _cvBaseHome.Children.Add(btn01);
 
 
@@ -57,10 +57,10 @@ namespace Leeum2015_EAP_11
 
 
             btn02.Click += new RoutedEventHandler(openDetail);
-            btn02.Tag = 102;
+            btn02.Tag = GlobalValues.DETAIL_MIDDLE;
 
             Canvas.SetTop(btn02, 500);
-            Canvas.SetLeft(btn02, 700);
+            Canvas.SetLeft(btn02, 100);
             _cvBaseHome.Children.Add(btn02);
 
 
@@ -71,10 +71,10 @@ namespace Leeum2015_EAP_11
 
 
             btn03.Click += new RoutedEventHandler(openDetail);
-            btn03.Tag = 103;
+            btn03.Tag = GlobalValues.DETAIL_BOTTOM;
 
             Canvas.SetTop(btn03, 900);
-            Canvas.SetLeft(btn03, 700);
+            Canvas.SetLeft(btn03, 100);
             _cvBaseHome.Children.Add(btn03);
 
             
