@@ -24,7 +24,7 @@ namespace Leeum2015_EAP_11
         public static int CONTENT_COUNT_BOTTOM = 6;
 
         public static int THUMB_START_MARGIN_X = 180;
-        public static int THUMB_START_MARGIN_Y = 1400;
+        public static int THUMB_START_MARGIN_Y = 800;
         public static int THUMB_MARGIN = 20;
     }
 
